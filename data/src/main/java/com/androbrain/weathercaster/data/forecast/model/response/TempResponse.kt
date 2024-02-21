@@ -1,6 +1,5 @@
 package com.androbrain.weathercaster.data.forecast.model.response
 
-
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -10,5 +9,5 @@ data class TempResponse(
     val max: Double,
     val min: Double,
     val morn: Double,
-    val night: Double
+    val night: Double,
 )

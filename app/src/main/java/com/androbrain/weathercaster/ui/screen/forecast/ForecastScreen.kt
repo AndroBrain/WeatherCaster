@@ -18,7 +18,7 @@ import com.androbrain.weathercaster.R
 fun ForecastScreen(
     modifier: Modifier = Modifier,
     viewModel: ForecastViewModel,
-    navigateUp: ()->Unit,
+    navigateUp: () -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     Scaffold(

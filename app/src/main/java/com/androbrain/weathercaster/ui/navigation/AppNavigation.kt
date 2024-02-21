@@ -6,7 +6,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.androbrain.weathercaster.ui.screen.forecast.details.forecastDetailsScreen
 import com.androbrain.weathercaster.ui.screen.forecast.forecastScreen
-import com.androbrain.weathercaster.ui.screen.forecast.navigateToForecast
 import com.androbrain.weathercaster.ui.screen.locations.LOCATIONS_ROUTE
 import com.androbrain.weathercaster.ui.screen.locations.locationsScreen
 

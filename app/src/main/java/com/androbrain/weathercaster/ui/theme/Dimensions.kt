@@ -7,7 +7,7 @@ class Dimensions(
     val screenSpacing: Dp = 16.dp,
 
     val viewSpacingSmall: Dp = 8.dp,
-    val viewSpacingMedium:Dp =16.dp,
+    val viewSpacingMedium: Dp = 16.dp,
 )
 
 val defaultDimensions = Dimensions()

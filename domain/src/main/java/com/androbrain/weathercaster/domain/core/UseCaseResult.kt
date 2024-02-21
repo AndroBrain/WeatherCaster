@@ -8,7 +8,7 @@ sealed class UseCaseResult<out T> {
 
 inline fun <R, T> UseCaseResult<T>.fold(
     onOk: (value: UseCaseResult.Ok<T>) -> R,
-    onError: (error: UseCaseResult.Error) -> R
+    onError: (error: UseCaseResult.Error) -> R,
 ): R {
     return when (this) {
         is UseCaseResult.Ok -> onOk(this)

@@ -1,7 +1,7 @@
 package com.androbrain.weathercaster.data.di
 
-import com.androbrain.weathercaster.data.forecast.datasource.RemoteForecastDataSource
 import com.androbrain.weathercaster.data.forecast.DefaultForecastRepository
+import com.androbrain.weathercaster.data.forecast.datasource.RemoteForecastDataSource
 import com.androbrain.weathercaster.domain.forecast.ForecastRepository
 import dagger.Module
 import dagger.Provides

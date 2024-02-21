@@ -9,7 +9,7 @@ import retrofit2.Response
 
 suspend fun <T> apiCall(
     dispatcher: CoroutineDispatcher = Dispatchers.IO,
-    call: suspend () -> Response<T>
+    call: suspend () -> Response<T>,
 ) = withContext(dispatcher) {
     try {
         val response = call.invoke()
