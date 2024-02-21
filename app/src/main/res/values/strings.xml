@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">WeatherCaster</string>
+
+    <!-- Locations -->
+    <string name="locations_add">Add location</string>
+    <string name="locations_add_latitude">Latitude</string>
+    <string name="locations_add_longitude">Longitude</string>
+    <string name="locations_add_err_latitude_missing">Latitude is missing</string>
+    <string name="locations_add_err_longitude_missing">Longitude is missing</string>
+
+    <string name="locations_latitude">Latitude: %1$s</string>
+    <string name="locations_longitude">Longitude: %1$s</string>
+
+    <!-- Forecast -->
+    <string name="forecast_title">Forecast</string>
+
+    <!-- Forecast Details -->
+    <string name="forecast_details_title">Details</string>
+
+    <!-- Accessibility -->
+    <string name="navigate_back">Navigate back</string>
+
+</resources>
