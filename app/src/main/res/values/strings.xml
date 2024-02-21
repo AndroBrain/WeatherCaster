@@ -8,16 +8,24 @@
     <string name="locations_add_err_latitude_missing">Latitude is missing</string>
     <string name="locations_add_err_longitude_missing">Longitude is missing</string>
 
-    <string name="locations_latitude">Latitude: %1$s</string>
-    <string name="locations_longitude">Longitude: %1$s</string>
+    <string name="locations_location">%1$s (%2$s, %3$s)</string>
 
-    <!-- Forecast -->
+    <!-- Forecast.kt -->
     <string name="forecast_title">Forecast</string>
 
-    <!-- Forecast Details -->
+    <!-- Forecast.kt Details -->
     <string name="forecast_details_title">Details</string>
 
     <!-- Accessibility -->
     <string name="navigate_back">Navigate back</string>
 
+    <string name="retry">Retry</string>
+
+    <!-- Result Errors -->
+    <string name="result_err_network">Network error.</string>
+    <string name="result_err_unknown">Unknown error.</string>
+    <string name="result_err_not_found">Couldn’t find weather for given location.</string>
+    <string name="result_err_too_many_requests">Too many requests. Try again later.</string>
+    <string name="result_err_server">Server is down. Try again later.</string>
+    <string name="result_err_wrong">Wrong latitude or longitude.</string>
 </resources>

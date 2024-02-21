@@ -61,7 +61,8 @@ fun LocationsScreen(
                 LocationItem(
                     modifier = locationModifier,
                     location = location,
-                    onClick = {}
+                    onClick = {},
+                    onRetry = { viewModel.retry(location) },
                 )
             }
         }
