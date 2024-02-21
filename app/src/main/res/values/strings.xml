@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">WeatherCaster</string>
+    <string name="location_label">%1$s (%2$s, %3$s)</string>
+    <string name="retry">Retry</string>
 
     <!-- Locations -->
     <string name="locations_add">Add location</string>
@@ -8,18 +10,11 @@
     <string name="locations_add_err_latitude_missing">Latitude is missing</string>
     <string name="locations_add_err_longitude_missing">Longitude is missing</string>
 
-    <string name="locations_location">%1$s (%2$s, %3$s)</string>
-
     <!-- Forecast.kt -->
     <string name="forecast_title">Forecast</string>
 
-    <!-- Forecast.kt Details -->
-    <string name="forecast_details_title">Details</string>
-
     <!-- Accessibility -->
     <string name="navigate_back">Navigate back</string>
-
-    <string name="retry">Retry</string>
 
     <!-- Result Errors -->
     <string name="result_err_network">Network error.</string>

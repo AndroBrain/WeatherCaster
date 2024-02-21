@@ -26,7 +26,14 @@ fun ForecastScreen(
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    Text(text = stringResource(id = R.string.forecast_details_title))
+                    Text(
+                        text = stringResource(
+                            id = R.string.location_label,
+                            state.model.city,
+                            state.model.latitude,
+                            state.model.longitude,
+                        )
+                    )
                 },
                 navigationIcon = {
                     IconButton(onClick = navigateUp) {

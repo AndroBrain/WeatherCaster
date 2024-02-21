@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.androbrain.weathercaster.ui.screen.forecast.details.forecastDetailsScreen
 import com.androbrain.weathercaster.ui.screen.forecast.forecastScreen
+import com.androbrain.weathercaster.ui.screen.forecast.navigateToForecast
 import com.androbrain.weathercaster.ui.screen.locations.LOCATIONS_ROUTE
 import com.androbrain.weathercaster.ui.screen.locations.locationsScreen
 
@@ -19,7 +20,7 @@ fun AppNavigation(
         navController = navController,
         startDestination = LOCATIONS_ROUTE,
     ) {
-        locationsScreen()
+        locationsScreen(navigateToForecast = { model -> navController.navigateToForecast(model = model) })
         forecastScreen(navigateUp = navController::navigateUp)
         forecastDetailsScreen(navigateUp = navController::navigateUp)
     }

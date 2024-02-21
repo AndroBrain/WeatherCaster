@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.androbrain.weathercaster.R
+import com.androbrain.weathercaster.domain.forecast.model.ForecastsModel
 import com.androbrain.weathercaster.ui.screen.locations.composable.AddLocationItem
 import com.androbrain.weathercaster.ui.screen.locations.composable.LocationItem
 import com.androbrain.weathercaster.ui.theme.App
@@ -24,6 +25,7 @@ import com.androbrain.weathercaster.ui.theme.App
 fun LocationsScreen(
     modifier: Modifier = Modifier,
     viewModel: LocationsViewModel,
+    navigateToForecast: (ForecastsModel) -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     Scaffold(
@@ -57,11 +59,11 @@ fun LocationsScreen(
             val locationModifier = Modifier
                 .fillMaxWidth()
                 .padding(locationPadding)
-            items(state.locations) { location ->
+            items(items = state.locations, key = { it.id }) { location ->
                 LocationItem(
                     modifier = locationModifier,
                     location = location,
-                    onClick = {},
+                    onClick = { model -> navigateToForecast(model) },
                     onRetry = { viewModel.retry(location) },
                 )
             }

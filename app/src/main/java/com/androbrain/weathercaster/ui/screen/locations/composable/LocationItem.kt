@@ -21,6 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.androbrain.weathercaster.R
 import com.androbrain.weathercaster.domain.core.ResultErrorType
+import com.androbrain.weathercaster.domain.forecast.model.ForecastsModel
 import com.androbrain.weathercaster.ui.core.getMessage
 import com.androbrain.weathercaster.ui.screen.locations.LocationDisplayable
 import com.androbrain.weathercaster.ui.theme.App
@@ -30,7 +31,7 @@ fun LocationItem(
     modifier: Modifier = Modifier,
     location: LocationDisplayable,
     onRetry: () -> Unit,
-    onClick: () -> Unit,
+    onClick: (ForecastsModel) -> Unit,
 ) {
     OutlinedCard(
         modifier = modifier,
@@ -39,7 +40,10 @@ fun LocationItem(
             when (it) {
                 is LocationDisplayable.Error -> LocationError(error = it.error, onClick = onRetry)
                 is LocationDisplayable.Loading -> LocationLoading()
-                is LocationDisplayable.Ok -> LocationOk(location = it, onClick = onClick)
+                is LocationDisplayable.Ok -> LocationOk(
+                    location = it,
+                    onClick = { onClick(it.model) },
+                )
             }
         }
     }
@@ -90,7 +94,7 @@ private fun LocationOk(location: LocationDisplayable.Ok, onClick: () -> Unit) {
             .clickable(onClick = onClick)
             .padding(App.dimens.viewSpacingSmall),
         text = stringResource(
-            id = R.string.locations_location,
+            id = R.string.location_label,
             location.model.city,
             location.model.latitude,
             location.model.longitude
