@@ -6,7 +6,6 @@ import com.androbrain.weathercaster.data.R
 import com.androbrain.weathercaster.data.api.WeatherForecastApiService
 import com.androbrain.weathercaster.data.apiCall
 import com.androbrain.weathercaster.data.forecast.model.request.GetForecastRequest
-import com.androbrain.weathercaster.data.forecast.model.response.ForecastResponse
 import com.androbrain.weathercaster.data.forecast.model.response.GetForecastResponse
 
 class RetrofitRemoteForecastDataSource(
@@ -22,9 +21,7 @@ class RetrofitRemoteForecastDataSource(
         }
         return if (response is ApiResponse.Ok) {
             val list = response.body.list.map { forecast ->
-                ForecastResponse(
-                    forecast.dt,
-                    forecast.temp,
+                forecast.copy(
                     weather = forecast.weather.map {
                         it.copy(
                             icon = context.getString(

@@ -1,9 +1,9 @@
-package com.androbrain.weathercaster.domain.forecast.model
+package com.androbrain.weathercaster.data.forecast.model.response
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class TempModel(
+data class FeelsLikeResponse(
     val day: Double,
     val night: Double,
 )
