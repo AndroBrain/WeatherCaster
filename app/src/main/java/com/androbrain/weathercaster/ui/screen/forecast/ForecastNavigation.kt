@@ -29,6 +29,6 @@ fun NavController.navigateToForecast(navOptions: NavOptions? = null, model: Fore
 
 data class ForecastArgs(val model: ForecastsModel) {
     constructor(savedStateHandle: SavedStateHandle) : this(
-        model = Json.decodeFromString(checkNotNull(savedStateHandle[MODEL_ARG]))
+        model = Json.decodeFromString(Uri.decode(checkNotNull(savedStateHandle[MODEL_ARG])))
     )
 }
