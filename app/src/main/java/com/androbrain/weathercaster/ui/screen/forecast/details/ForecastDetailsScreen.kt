@@ -18,6 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.androbrain.weathercaster.R
 import com.androbrain.weathercaster.ui.screen.forecast.composable.ForecastItem
@@ -42,7 +43,9 @@ fun ForecastDetailsScreen(
                             state.city,
                             state.latitude,
                             state.longitude,
-                        )
+                        ),
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
                     )
                 },
                 navigationIcon = {

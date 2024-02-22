@@ -94,7 +94,7 @@ private fun LocationOk(location: LocationDisplayable.Ok, onClick: () -> Unit) {
             .clickable(onClick = onClick)
             .padding(App.dimens.viewSpacingSmall),
         text = stringResource(
-            id = R.string.location_label,
+            id = R.string.location_label_precise,
             location.model.city,
             location.model.latitude,
             location.model.longitude

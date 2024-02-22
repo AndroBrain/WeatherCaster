@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WeatherCaster</string>
-    <string name="location_label">%1$s (%2$s, %3$s)</string>
+    <string name="location_label">%1$s (%2$.2f, %3$.2f)</string>
+    <string name="location_label_precise">%1$s (%2$s, %3$s)</string>
     <string name="retry">Retry</string>
     <string name="temperature">%1$s °F</string>
 
