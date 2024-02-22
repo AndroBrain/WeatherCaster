@@ -8,6 +8,9 @@ class Dimensions(
 
     val viewSpacingSmall: Dp = 8.dp,
     val viewSpacingMedium: Dp = 16.dp,
+
+    val weatherItemMinSize: Dp = 160.dp,
+    val weatherIconSize: Dp = 50.dp,
 )
 
 val defaultDimensions = Dimensions()

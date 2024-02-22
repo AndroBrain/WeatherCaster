@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="weather_forecast_api_url">https://api.openweathermap.org/data/2.5/</string>
+    <string name="weather_forecast_api_icon_formatter">https://openweathermap.org/img/wn/%1$s@2x.png</string>
 
     <integer name="api_connect_timeout">60</integer>
     <integer name="api_read_timeout">60</integer>
