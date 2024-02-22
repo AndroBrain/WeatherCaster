@@ -6,10 +6,13 @@
 
     <!-- Locations -->
     <string name="locations_add">Add location</string>
+    <string name="locations_get">Get location</string>
     <string name="locations_add_latitude">Latitude</string>
     <string name="locations_add_longitude">Longitude</string>
     <string name="locations_add_err_latitude_missing">Latitude is missing</string>
     <string name="locations_add_err_longitude_missing">Longitude is missing</string>
+    <string name="locations_get_permission_required">Location permission is required to access your latitude and longitude.</string>
+    <string name="locations_get_error">Unknown error occurred. Please check whether your Location is active.</string>
 
     <!-- Forecast -->
     <string name="forecast_title">Forecast</string>

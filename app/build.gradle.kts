@@ -66,6 +66,7 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.material3.icons.extended)
 
+    implementation(libs.play.services.location)
     implementation(libs.landscapist.glide)
     implementation(libs.navigation.compose)
     implementation(libs.lifecycle.runtime.compose)
