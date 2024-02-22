@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.androbrain.weathercaster.R
+import com.androbrain.weathercaster.domain.forecast.model.ForecastModel
 import com.androbrain.weathercaster.ui.screen.forecast.composable.ForecastItem
 import com.androbrain.weathercaster.ui.theme.App
 
@@ -28,6 +29,7 @@ fun ForecastScreen(
     modifier: Modifier = Modifier,
     viewModel: ForecastViewModel,
     navigateUp: () -> Unit,
+    navigateToDetails: (ForecastModel) -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     Scaffold(
@@ -66,7 +68,11 @@ fun ForecastScreen(
                 .fillMaxWidth()
                 .padding(itemPadding)
             items(state.model.forecasts) { forecast ->
-                ForecastItem(modifier = itemModifier, model = forecast)
+                ForecastItem(
+                    modifier = itemModifier,
+                    model = forecast,
+                    onClick = { navigateToDetails(forecast) },
+                )
             }
         }
     }
