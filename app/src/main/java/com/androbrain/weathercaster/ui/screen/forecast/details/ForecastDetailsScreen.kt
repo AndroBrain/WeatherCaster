@@ -1,12 +1,14 @@
 package com.androbrain.weathercaster.ui.screen.forecast.details
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
@@ -19,6 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.androbrain.weathercaster.R
 import com.androbrain.weathercaster.ui.screen.forecast.composable.ForecastItem
+import com.androbrain.weathercaster.ui.screen.forecast.details.composable.ForecastDetailsItem
 import com.androbrain.weathercaster.ui.theme.App
 
 @Composable
@@ -33,12 +36,19 @@ fun ForecastDetailsScreen(
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    Text(text = state.model.date)
+                    Text(
+                        text = stringResource(
+                            id = R.string.location_label,
+                            state.city,
+                            state.latitude,
+                            state.longitude,
+                        )
+                    )
                 },
                 navigationIcon = {
                     IconButton(onClick = navigateUp) {
                         Icon(
-                            imageVector = Icons.Default.ArrowBack,
+                            imageVector = Icons.AutoMirrored.Default.ArrowBack,
                             contentDescription = stringResource(id = R.string.navigate_back),
                         )
                     }
@@ -51,10 +61,66 @@ fun ForecastDetailsScreen(
                 .fillMaxSize()
                 .padding(insets),
             horizontalAlignment = Alignment.CenterHorizontally,
-            contentPadding = PaddingValues(horizontal = App.dimens.viewSpacingSmall),
+            verticalArrangement = Arrangement.spacedBy(App.dimens.viewSpacingSmall),
+            contentPadding = PaddingValues(horizontal = App.dimens.screenSpacing),
         ) {
+            val model = state.model
             item {
-                ForecastItem(model = state.model)
+                ForecastItem(model = model)
+            }
+            item {
+                ForecastDetailsItem(
+                    label = stringResource(id = R.string.forecast_details_day),
+                    value = stringResource(id = R.string.temperature, model.temp.day),
+                )
+            }
+            item {
+                ForecastDetailsItem(
+                    label = stringResource(id = R.string.forecast_details_day_feels_like),
+                    value = stringResource(id = R.string.temperature, model.feelsLike.day),
+                )
+            }
+            item {
+                ForecastDetailsItem(
+                    label = stringResource(id = R.string.forecast_details_night),
+                    value = stringResource(id = R.string.temperature, model.temp.night),
+                )
+            }
+            item {
+                ForecastDetailsItem(
+                    label = stringResource(id = R.string.forecast_details_night_feels_like),
+                    value = stringResource(id = R.string.temperature, model.feelsLike.day),
+                )
+            }
+            item {
+                HorizontalDivider()
+            }
+            item {
+                ForecastDetailsItem(
+                    label = stringResource(id = R.string.forecast_details_humidity),
+                    value = model.humidity.toString(),
+                )
+            }
+            item {
+                ForecastDetailsItem(
+                    label = stringResource(id = R.string.forecast_details_pressure),
+                    value = model.pressure.toString(),
+                )
+            }
+            item {
+                HorizontalDivider()
+            }
+            item {
+                ForecastDetailsItem(
+                    label = stringResource(id = R.string.forecast_details_sunrise),
+                    value = model.sunrise,
+                )
+            }
+            item {
+                ForecastDetailsItem(
+                    label = stringResource(id = R.string.forecast_details_sunset),
+                    value = model.sunset,
+                )
             }
         }
     }

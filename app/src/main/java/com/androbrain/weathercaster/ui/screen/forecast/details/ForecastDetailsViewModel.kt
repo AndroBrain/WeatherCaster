@@ -12,6 +12,13 @@ class ForecastDetailsViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
     private val args = ForecastDetailsArgs(savedStateHandle)
-    private val _state = MutableStateFlow(ForecastDetailsState(model = args.model))
+    private val _state = MutableStateFlow(
+        ForecastDetailsState(
+            model = args.model,
+            city = args.city,
+            longitude = args.longitude,
+            latitude = args.latitude,
+        )
+    )
     val state = _state.asStateFlow()
 }

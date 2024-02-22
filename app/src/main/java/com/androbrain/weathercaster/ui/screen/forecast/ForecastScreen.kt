@@ -8,7 +8,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -20,8 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.androbrain.weathercaster.R
-import com.androbrain.weathercaster.domain.forecast.model.ForecastModel
 import com.androbrain.weathercaster.ui.screen.forecast.composable.ForecastItem
+import com.androbrain.weathercaster.ui.screen.forecast.details.ForecastDetailsArgs
 import com.androbrain.weathercaster.ui.theme.App
 
 @Composable
@@ -29,7 +29,7 @@ fun ForecastScreen(
     modifier: Modifier = Modifier,
     viewModel: ForecastViewModel,
     navigateUp: () -> Unit,
-    navigateToDetails: (ForecastModel) -> Unit,
+    navigateToDetails: (ForecastDetailsArgs) -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     Scaffold(
@@ -49,7 +49,7 @@ fun ForecastScreen(
                 navigationIcon = {
                     IconButton(onClick = navigateUp) {
                         Icon(
-                            imageVector = Icons.Default.ArrowBack,
+                            imageVector = Icons.AutoMirrored.Default.ArrowBack,
                             contentDescription = stringResource(id = R.string.navigate_back),
                         )
                     }
@@ -71,7 +71,16 @@ fun ForecastScreen(
                 ForecastItem(
                     modifier = itemModifier,
                     model = forecast,
-                    onClick = { navigateToDetails(forecast) },
+                    onClick = {
+                        navigateToDetails(
+                            ForecastDetailsArgs(
+                                model = forecast,
+                                city = state.model.city,
+                                latitude = state.model.latitude,
+                                longitude = state.model.longitude,
+                            )
+                        )
+                    },
                 )
             }
         }

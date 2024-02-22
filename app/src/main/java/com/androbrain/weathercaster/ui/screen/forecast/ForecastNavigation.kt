@@ -7,8 +7,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import com.androbrain.weathercaster.domain.forecast.model.ForecastModel
 import com.androbrain.weathercaster.domain.forecast.model.ForecastsModel
+import com.androbrain.weathercaster.ui.screen.forecast.details.ForecastDetailsArgs
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -17,7 +17,7 @@ private const val MODEL_ARG = "MODEL"
 
 fun NavGraphBuilder.forecastScreen(
     navigateUp: () -> Unit,
-    navigateToDetails: (ForecastModel) -> Unit,
+    navigateToDetails: (ForecastDetailsArgs) -> Unit,
 ) {
     composable("$FORECAST_ROUTE/{$MODEL_ARG}") {
         val viewModel: ForecastViewModel = hiltViewModel()

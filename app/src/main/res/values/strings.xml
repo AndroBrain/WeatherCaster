@@ -11,8 +11,18 @@
     <string name="locations_add_err_latitude_missing">Latitude is missing</string>
     <string name="locations_add_err_longitude_missing">Longitude is missing</string>
 
-    <!-- Forecast.kt -->
+    <!-- Forecast -->
     <string name="forecast_title">Forecast</string>
+
+    <!-- Forecast details -->
+    <string name="forecast_details_day">Day</string>
+    <string name="forecast_details_night">Night</string>
+    <string name="forecast_details_day_feels_like">Day feels like</string>
+    <string name="forecast_details_night_feels_like">Night feels like</string>
+    <string name="forecast_details_humidity">Humidity</string>
+    <string name="forecast_details_pressure">Pressure</string>
+    <string name="forecast_details_sunrise">Sunrise</string>
+    <string name="forecast_details_sunset">Sunset</string>
 
     <!-- Accessibility -->
     <string name="navigate_back">Navigate back</string>

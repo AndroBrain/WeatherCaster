@@ -24,7 +24,7 @@ fun AppNavigation(
         locationsScreen(navigateToForecast = { model -> navController.navigateToForecast(model = model) })
         forecastScreen(
             navigateUp = navController::navigateUp,
-            navigateToDetails = { model -> navController.navigateToForecastDetails(model = model) },
+            navigateToDetails = { args -> navController.navigateToForecastDetails(args = args) },
         )
         forecastDetailsScreen(navigateUp = navController::navigateUp)
     }

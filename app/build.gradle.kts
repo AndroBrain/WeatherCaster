@@ -62,6 +62,10 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.compose)
 
+    // Material3
+    implementation(libs.material3)
+    implementation(libs.material3.icons.extended)
+
     implementation(libs.landscapist.glide)
     implementation(libs.navigation.compose)
     implementation(libs.lifecycle.runtime.compose)
@@ -69,6 +73,5 @@ dependencies {
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.material3)
     implementation(libs.kotlinx.serialization.json)
 }

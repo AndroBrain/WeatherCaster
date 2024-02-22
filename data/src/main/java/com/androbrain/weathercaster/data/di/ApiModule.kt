@@ -27,7 +27,6 @@ object ApiModule {
         isLenient = true
         ignoreUnknownKeys = true
         coerceInputValues = true
-        prettyPrint = false
     }
 
     @Provides
