@@ -11,6 +11,8 @@ class Dimensions(
 
     val weatherItemMinSize: Dp = 160.dp,
     val weatherIconSize: Dp = 50.dp,
+
+    val buttonLoadingIndicatorSize: Dp = 24.dp,
 )
 
 val defaultDimensions = Dimensions()

@@ -47,9 +47,11 @@ fun LocationsScreen(
                 AddLocationItem(
                     latitude = state.latitude,
                     longitude = state.longitude,
+                    locationLoading = state.loadingLocation,
                     addError = state.addError,
                     setLatitude = viewModel::setLatitude,
                     setLongitude = viewModel::setLongitude,
+                    setLoadingLocation = viewModel::setLoadingLocation,
                     add = viewModel::addLocation,
                 )
             }

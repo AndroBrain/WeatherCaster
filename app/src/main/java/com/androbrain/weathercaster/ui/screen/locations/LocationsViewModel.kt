@@ -55,6 +55,10 @@ class LocationsViewModel @Inject constructor(
         _state.update { state -> state.copy(longitude = longitude, addError = null) }
     }
 
+    fun setLoadingLocation(isLoading: Boolean) {
+        _state.update { state -> state.copy(loadingLocation = isLoading) }
+    }
+
     fun retry(location: LocationDisplayable) {
         _state.update { state ->
             val locations = state.locations.toMutableList()
