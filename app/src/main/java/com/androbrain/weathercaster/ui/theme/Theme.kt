@@ -37,8 +37,8 @@ fun ProvideDimens(
 
 @Composable
 fun WeatherCasterTheme(
-    darkTheme: Boolean = true,
-    dynamicColor: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
